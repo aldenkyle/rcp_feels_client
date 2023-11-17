@@ -23,7 +23,7 @@ const BoundaryData = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/boundary");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/boundary");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -57,7 +57,7 @@ const WaterData = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/water");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/water");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -89,7 +89,7 @@ const Trails = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/trails");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/trails");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -121,7 +121,7 @@ const Contours = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/contours");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/contours");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -152,7 +152,7 @@ const Roads = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/roads");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/roads");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -183,7 +183,7 @@ const Parking = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/parking");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/parking");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -215,7 +215,7 @@ const Buildings = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/buildings");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/buildings");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -246,7 +246,7 @@ const Buffer = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/buffer");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/buffer");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -287,7 +287,7 @@ const Awestruck = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/awestruck");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/awestruck");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -317,7 +317,7 @@ const Excited = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/excited");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/excited");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -347,7 +347,7 @@ const Happy = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/happy");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/happy");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -377,7 +377,7 @@ const Relaxed = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/relaxed");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/relaxed");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -407,7 +407,7 @@ const Ambivalent = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/ambivalent");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/ambivalent");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -437,7 +437,7 @@ const Annoyed = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/annoyed");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/annoyed");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -467,7 +467,7 @@ const Anxious = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/anxious");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/anxious");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -497,7 +497,7 @@ const Fearful = forwardRef((undefined, fearRef) => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/fearful");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/fearful");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -537,7 +537,7 @@ const FeelsHex = forwardRef((undefined, fearRef) => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/feels-hex");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/feels-hex");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -585,7 +585,7 @@ const FearfulData = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/fearful");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/fearful");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -618,7 +618,7 @@ const POIs = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/pois");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/pois");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();
@@ -670,7 +670,7 @@ const Feels = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/feels");
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/feels");
 
       //jsonData is an array cotaining the json object
       const jsonData = await response.json();

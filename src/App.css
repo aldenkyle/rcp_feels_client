@@ -49,6 +49,7 @@ body::-webkit-scrollbar{
 
 #info-div {
   position:absolute;
+  width: 30%;
   top: 30%;
   left: 35%;
   line-height: 1;

@@ -67,7 +67,7 @@ export const LocationFinderDummy = (clickState) => {
          body: JSON.stringify(formData)
         };
         //console.log(requestOptions)
-        const fetchPromise  =  fetch('http://localhost:3000/feels-ins', requestOptions)
+        const fetchPromise  =  fetch('https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/feels-ins', requestOptions)
         setTimeout(function(){
           console.log(console.log(fetchPromise));
           }, 1000);
