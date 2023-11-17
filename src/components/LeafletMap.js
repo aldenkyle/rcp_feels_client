@@ -8,6 +8,7 @@ import "leaflet-easybutton/src/easy-button.css";
 import "font-awesome/css/font-awesome.min.css";
 import { GoogleProvider, OpenStreetMapProvider, GeoSearchControl } from 'leaflet-geosearch'
 import 'leaflet-geosearch/dist/geosearch.css';
+import icon from 'leaflet/dist/images/marker-icon.png';
 
 
 
@@ -701,7 +702,7 @@ const Feels = () => {
                  className={"myClass-" + index}
                  center={coord}
                  fillOpacity={1}
-                 radius={4}
+                 radius={5}
                  fillColor={getFeelColor(feel)}
                  weight={1}
                  color={'white'}
@@ -718,6 +719,7 @@ const Feels = () => {
 };
 
 
+
 // make new leaflet element
 const Search = (props) => {
   const map = useMap() // access to leaflet map
@@ -726,6 +728,7 @@ const Search = (props) => {
   useEffect(() => {
       const searchControl = new GeoSearchControl({
           provider,
+          showMarker: false,
       })
 
       map.addControl(searchControl) // this is how you add a control in vanilla leaflet
