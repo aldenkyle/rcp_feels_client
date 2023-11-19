@@ -1054,12 +1054,12 @@ const LeafletMap = () => {
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
             attribution='Esri &mdash; Source: DCGIS&copy'
-            url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Ortho2019_WebMercator/MapServer/tile/{z}/{y}/{x}"
-            opacity={0.75} />
+            url="https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"
+            opacity={.5} />
       <TileLayer
             attribution='Esri &mdash; Source: DCGIS&copy'
-            url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/DC_Basemap_WebMercator/MapServer/tile/{z}/{y}/{x}"
-            opacity={0.5} />
+            url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Ortho2019_WebMercator/MapServer/tile/{z}/{y}/{x}"
+            opacity={0.5} />     
        <WaterData />
        <Trails />
        <Parking />
