@@ -1,5 +1,5 @@
 import { React, useState, useEffect, useRef, cloneElement,forwardRef } from "react";
-import { MapContainer, TileLayer, LayersControl, GeoJSON, Popup, CircleMarker,useMap,FeatureGroup, Marker, LayerGroup } from "react-leaflet";
+import { MapContainer, TileLayer, LayersControl, GeoJSON, Popup, CircleMarker,useMap,FeatureGroup, Marker, LayerGroup,Tooltip } from "react-leaflet";
 import { onEachTrail,LocationFinderDummy ,getFeelColor,getHexColor,onEachRoad,onEachContour, onEachHex} from "./maputils";
 //import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
@@ -50,6 +50,38 @@ const BoundaryData = () => {
   }
 };
 
+
+const BoundaryDataBack = () => {
+  // create state variable to hold data when it is fetched
+  const [data, setData] = useState();
+
+  const getData = async () => {
+    try {
+      const response = await fetch("https://ancient-dusk-34834-4d58d241ef9f.herokuapp.com/boundary");
+
+      //jsonData is an array cotaining the json object
+      const jsonData = await response.json();
+      //console.log(jsonData)
+      //Accessing the json object and then obtaining the geojson object
+      //which is the value of st_asgeojson key
+      setData(JSON.parse(jsonData[0].st_asgeojson));
+
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  //console.log(data);
+
+  // render react-leaflet GeoJSON when the data is ready
+  if (data) {
+    return <GeoJSON data={data} pathOptions={{fillcolor:'#9dc4a7', opacity:0, color:'#9dc4a7', fillOpacity:.1}}/>;
+  } else {
+    return null;
+  }
+};
 
 
 const WaterData = () => {
@@ -640,6 +672,7 @@ const POIs = () => {
     //console.log(data.features)
     const myPoints = data.features.map( (pt, index) => {
       const coord = [pt.geometry.coordinates[1], pt.geometry.coordinates[0]]
+      const name = pt.properties.poiname
       //console.log(coord)
       return (
               <CircleMarker
@@ -652,8 +685,9 @@ const POIs = () => {
                  stroke={0}
                >
                  <Popup>
-                   <span>{pt.properties.poitype + ": " + pt.properties.poiname}</span>
+                   <span>{pt.properties.poiname}</span>
                  </Popup>
+                 <Tooltip >{name}</Tooltip>
             </CircleMarker>
           )});
     return myPoints;
@@ -1019,8 +1053,12 @@ const LeafletMap = () => {
     <LocationFinderDummy tog={clickState} />
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
-            attribution='Esri &mdash; Source: Esri, i-cubed, USDA, USGS,and the GIS User Community&copy'
-            url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png"
+            attribution='Esri &mdash; Source: DCGIS&copy'
+            url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Ortho2019_WebMercator/MapServer/tile/{z}/{y}/{x}"
+            opacity={0.75} />
+      <TileLayer
+            attribution='Esri &mdash; Source: DCGIS&copy'
+            url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/DC_Basemap_WebMercator/MapServer/tile/{z}/{y}/{x}"
             opacity={0.5} />
        <WaterData />
        <Trails />
