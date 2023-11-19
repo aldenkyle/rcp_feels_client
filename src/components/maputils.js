@@ -87,6 +87,7 @@ export const LocationFinderDummy = (clickState) => {
   });
 
   if (clickState.tog) {
+    console.log(clickState.tog)
   return position === null ? null : (
     <Marker position={position} icon={myIcon}>
       <Popup permanent><span>

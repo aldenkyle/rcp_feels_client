@@ -799,6 +799,7 @@ const LeafletMap = () => {
   const [infoState, setInfoState] = useState(false);
  
   const toggle=()=>{
+      console.log(clickState)
       setClickState(!clickState)};
 
   const toggleInfo=()=>{
@@ -1049,17 +1050,19 @@ const LeafletMap = () => {
   const zoomLevel = 14;
   return (
     <>
-    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={35}  >  
+    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={25}  >  
     <LocationFinderDummy tog={clickState} />
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
             attribution='Esri &mdash; Source: DCGIS&copy'
-            url="https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"
-            opacity={.5} />
+            url="https://fly.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Firefly/MapServer/tile/{z}/{y}/{x}"
+            opacity={0.5} 
+            maxZoom={25}/>
       <TileLayer
             attribution='Esri &mdash; Source: DCGIS&copy'
             url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Ortho2019_WebMercator/MapServer/tile/{z}/{y}/{x}"
-            opacity={0.5} />     
+            opacity={0.5}
+            maxZoom={25} />     
        <WaterData />
        <Trails />
        <Parking />
