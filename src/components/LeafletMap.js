@@ -141,7 +141,7 @@ const Trails = () => {
   
   // render react-leaflet GeoJSON when the data is ready
   if (data) {
-    return <GeoJSON data={data} onEachFeature={onEachTrail} pathOptions={{opacity:1, color:'#897044', weight:2, dashArray: '5, 5', dashOffset: '10'}}  />;
+    return <GeoJSON data={data} onEachFeature={onEachTrail} pathOptions={{opacity:1, color:'#ab985e', weight:2, dashArray: '5, 5', dashOffset: '10'}}  />;
   } else {
     return null;
   }
@@ -680,14 +680,13 @@ const POIs = () => {
                  className={"myClass-" + index}
                  center={coord}
                  fillOpacity={1}
-                 radius={2}
-                 fillColor={'black'}
+                 radius={4}
+                 fillColor={'#363533'}
                  stroke={0}
                >
                  <Popup>
                    <span>{pt.properties.poiname}</span>
                  </Popup>
-                 <Tooltip >{name}</Tooltip>
             </CircleMarker>
           )});
     return myPoints;
@@ -1050,19 +1049,19 @@ const LeafletMap = () => {
   const zoomLevel = 14;
   return (
     <>
-    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={25}  >  
+    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21}  >  
     <LocationFinderDummy tog={clickState} />
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
-            attribution='Esri &mdash; Source: DCGIS&copy'
+            attribution='Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
             url="https://fly.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Firefly/MapServer/tile/{z}/{y}/{x}"
             opacity={0.5} 
-            maxZoom={25}/>
+            maxZoom={21}/>
       <TileLayer
             attribution='Esri &mdash; Source: DCGIS&copy'
             url="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Ortho2019_WebMercator/MapServer/tile/{z}/{y}/{x}"
             opacity={0.5}
-            maxZoom={25} />     
+            maxZoom={21} />     
        <WaterData />
        <Trails />
        <Parking />
@@ -1129,8 +1128,8 @@ const LeafletMap = () => {
     <i style={{background:"#EE9B00"}}></i><span2>Annoyed Experiences</span2><br></br>
     <i style={{background:"#BB3E03"}}></i><span2>Anxious Experiences</span2><br></br>
     <i style={{background:"#9B2226"}}></i><span2>Fearful Experiences</span2><br></br>
-    <i class="i2" style={{background:"Black"}}></i><span2>Points of Interest</span2><br></br>
-    <text class="i3" style={{color:"#897044", fontWeight:"bold", fontSize:"20px"}}>- - </text><span2>Trails</span2><br></br>
+    <i class="i2" style={{background:"#363533"}}></i><span2>Points of Interest</span2><br></br>
+    <text class="i3" style={{color:"#ab985e", fontWeight:"bold", fontSize:"20px"}}>- - </text><span2>Trails</span2><br></br>
     <i class="i4" style={{background:"gray"}}></i><span2>Roads</span2><br></br>
     
     </div>
