@@ -680,7 +680,7 @@ const POIs = () => {
                  className={"myClass-" + index}
                  center={coord}
                  fillOpacity={1}
-                 radius={4}
+                 radius={6}
                  fillColor={'#363533'}
                  stroke={0}
                >
@@ -735,7 +735,7 @@ const Feels = () => {
                  className={"myClass-" + index}
                  center={coord}
                  fillOpacity={1}
-                 radius={5}
+                 radius={7}
                  fillColor={getFeelColor(feel)}
                  weight={1}
                  color={'white'}
