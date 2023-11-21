@@ -1062,7 +1062,7 @@ const LeafletMap = () => {
   const zoomLevel = 14;
   return (
     <>
-    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21}  >  
+    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21} tapTolerance={15}  >  
     <LocationFinderDummy tog={clickState} />
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
