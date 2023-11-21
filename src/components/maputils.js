@@ -147,7 +147,7 @@ export const LocationFinderDummy = (clickState) => {
       </Popup>
     </Marker>
   )
-    } ;
+    } 
 };
 
 

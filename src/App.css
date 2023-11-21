@@ -6,6 +6,7 @@
   height: 100vh;
   width: 100%;
   background: #9dc4a7;
+  font-family:'Gill Sans MT'
 }
 
 .leaflet-control-container .leaflet-top.leaflet-left { position: absolute; left: 10px; top: 90px}
@@ -124,6 +125,7 @@ i.icon {
 
 h1 {
   color:white;
+  font-family:'Gill Sans MT';
   text-align:center;
   margin: 10px;
 }
@@ -289,6 +291,7 @@ label {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {

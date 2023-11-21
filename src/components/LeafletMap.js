@@ -741,7 +741,7 @@ const Feels = () => {
                  color={'white'}
                >
                  <Popup>
-                   <span>{pt.properties.feeltext + ": " + pt.properties.story}</span>
+                   <span style={{fontWeight:'bold', color:getFeelColor(feel)}}>{pt.properties.feeltext}:  </span><span style={{fontFamily:'bradley hand itc', fontSize:14, fontWeight:'bold'}}>   {pt.properties.story}</span>
                  </Popup>
             </CircleMarker>
                       )});
@@ -797,9 +797,10 @@ const LeafletMap = () => {
   const [clickState, setClickState] = useState(false);
   const [infoState, setInfoState] = useState(false);
  
-  const toggle=()=>{
+  const toggle=(clickState)=>{
       console.log(clickState)
       setClickState(!clickState)};
+      console.log(clickState)
 
   const toggleInfo=()=>{
         setInfoState(!infoState)};
@@ -1019,10 +1020,11 @@ const LeafletMap = () => {
     //const map = mapRef.current;
     console.log(map)
     L.easyButton( "fa-map-marker", () => {
-      toggle()
+      setClickState(!clickState);
     }).addTo(map);
 
   }, [map]);
+
 
   useEffect(() => {
     if (!map) return;
