@@ -1025,6 +1025,17 @@ const LeafletMap = () => {
 
   }, [map]);
 
+  const  PointsToFront = () => {
+    setTimeout(function(){
+      if (map && feelRef.current) {
+        const mapC = map;
+        console.log("I'm fronting2")
+        const feelLayer = feelRef.current;
+        mapC.removeLayer(feelLayer);
+        mapC.addLayer(feelLayer);}
+     },2000);
+   }
+
 
   useEffect(() => {
     if (!map) return;
@@ -1109,6 +1120,7 @@ const LeafletMap = () => {
           <LayerGroup id='fearG' ref={fearRef} ><Fearful /></LayerGroup>
           </LayersControl.Overlay>
       </LayersControl>
+      <PointsToFront/>
       <Search provider={new OpenStreetMapProvider({ })} />
     </MapContainer>
     <div id="info-div" style={{display:"none"}}><button id="close" class="button close" onClick={addInfo}>x</button><text class="p1">{"\n"}We want to see how different places in Rock Creek Park make people feel. If you'd like to share your experience, click the map marker button on the left, then click anywhere in the park to tell us a story (or several) about your experiences in the park. If you have questions please reach out to Kyle Alden at kyle.alden@gmail.com{"\n "}</text></div> 
