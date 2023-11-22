@@ -1015,6 +1015,21 @@ const LeafletMap = () => {
 
   }, [map]);
 
+
+  
+  useEffect(() => {
+    if (!map) return;
+    //const map = mapRef.current;
+    console.log(map)
+    L.easyButton('<img src="https://pdxcyclesafetymap.neocities.org/images/blackSkull.svg" style="width:16px">', () => {
+      map.locate().on("locationfound", function (e) {
+        setPosition(e.latlng);
+        map.flyTo(e.latlng, 18);
+      });
+    }).addTo(map);
+
+  }, [map]);
+
   useEffect(() => {
     if (!map) return;
     //const map = mapRef.current;
