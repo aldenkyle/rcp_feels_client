@@ -735,7 +735,7 @@ const Feels = () => {
                  className={"myClass-" + index}
                  center={coord}
                  fillOpacity={1}
-                 radius={5}
+                 radius={6}
                  fillColor={getFeelColor(feel)}
                  weight={1}
                  color={'white'}
@@ -1062,7 +1062,7 @@ const LeafletMap = () => {
   const zoomLevel = 14;
   return (
     <>
-    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21} tapTolerance={15}  >  
+    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21} tapTolerance={50}  >  
     <LocationFinderDummy tog={clickState} />
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
