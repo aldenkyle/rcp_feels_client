@@ -1015,21 +1015,6 @@ const LeafletMap = () => {
 
   }, [map]);
 
-
-  
-  useEffect(() => {
-    if (!map) return;
-    //const map = mapRef.current;
-    console.log(map)
-    L.easyButton('<img src="https://pdxcyclesafetymap.neocities.org/images/blackSkull.svg" style="width:16px">', () => {
-      map.locate().on("locationfound", function (e) {
-        setPosition(e.latlng);
-        map.flyTo(e.latlng, 18);
-      });
-    }).addTo(map);
-
-  }, [map]);
-
   useEffect(() => {
     if (!map) return;
     //const map = mapRef.current;
@@ -1077,7 +1062,7 @@ const LeafletMap = () => {
   const zoomLevel = 14;
   return (
     <>
-    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21} tapTolerance={50}  >  
+    <MapContainer  ref={setMap} center={center} zoom={zoomLevel} maxZoom={21} tapTolerance={1}  >  
     <LocationFinderDummy tog={clickState} />
       {/*The LayersControl tag help us organize our layers into baselayers and tilelayers*/}
       <TileLayer
